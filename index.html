@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neha Studio — Photography & Videography, Triveni Nagar, Lucknow</title>
+<meta name="description" content="Neha Studio, Triveni Nagar Lucknow — Wedding, Pre-Wedding, Birthday & Baby Shoot photography, album printing and photo editing services.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#efe6d8;
+    --paper:#f7f2ea;
+    --ink:#211a14;
+    --maroon:#7a2e2e;
+    --rust:#b5562e;
+    --gold:#a9822f;
+    --line: rgba(33,26,20,0.14);
+    --sepia: #c9a97b;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Manrope', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3, .display{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+  }
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1140px; margin:0 auto; padding:0 28px;}
+
+  /* ===== Film strip signature element ===== */
+  .filmstrip{
+    display:flex;
+    background: var(--ink);
+    height:22px;
+    align-items:center;
+    overflow:hidden;
+    position:relative;
+  }
+  .filmstrip::before, .filmstrip::after{
+    content:'';
+    position:absolute; top:0; bottom:0;
+    width:100%;
+    background-image: repeating-linear-gradient(90deg, var(--paper) 0 10px, transparent 10px 26px);
+    background-position: center;
+    background-size: 26px 100%;
+    opacity:0.9;
+  }
+  .filmstrip::before{ top:2px; height:6px;}
+  .filmstrip::after{ bottom:2px; height:6px;}
+
+  /* ===== Header ===== */
+  header{
+    position:sticky; top:0; z-index:50;
+    background: rgba(247,242,234,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 0;
+  }
+  .logo{
+    font-family:'Fraunces', serif;
+    font-size:1.5rem;
+    font-weight:700;
+    display:flex; align-items:center; gap:10px;
+  }
+  .logo .dot{
+    width:10px; height:10px; border-radius:50%;
+    background: var(--rust);
+    box-shadow: 0 0 0 3px rgba(181,86,46,0.18);
+  }
+  nav ul{
+    display:flex; gap:34px; list-style:none;
+  }
+  nav ul li a{
+    font-size:0.92rem; font-weight:600;
+    color: var(--ink);
+    position:relative;
+    padding-bottom:4px;
+  }
+  nav ul li a::after{
+    content:''; position:absolute; left:0; bottom:0;
+    width:0; height:2px; background:var(--rust);
+    transition:width .25s ease;
+  }
+  nav ul li a:hover::after{ width:100%; }
+  .nav-cta{
+    background:var(--maroon); color:var(--paper);
+    padding:10px 20px; border-radius:2px;
+    font-weight:700; font-size:0.88rem;
+    letter-spacing:0.02em;
+  }
+  .menu-btn{ display:none; background:none; border:none; font-size:1.6rem; cursor:pointer; color:var(--ink);}
+
+  /* ===== Hero ===== */
+  .hero{
+    position:relative;
+    padding:88px 0 70px;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:'';
+    position:absolute; right:-120px; top:-160px;
+    width:520px; height:520px; border-radius:50%;
+    background: radial-gradient(circle, rgba(181,86,46,0.16), transparent 70%);
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap:56px;
+    align-items:center;
+    position:relative;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:10px;
+    font-size:0.78rem; font-weight:700; letter-spacing:0.14em;
+    text-transform:uppercase; color:var(--maroon);
+    margin-bottom:22px;
+  }
+  .eyebrow::before{
+    content:''; width:26px; height:1.5px; background:var(--maroon);
+  }
+  .hero h1{
+    font-size:clamp(2.6rem, 5vw, 4.1rem);
+    line-height:1.04;
+    margin-bottom:22px;
+  }
+  .hero h1 em{
+    font-style:italic; color:var(--rust);
+  }
+  .hero p{
+    font-size:1.08rem; line-height:1.65;
+    color:#4a4038;
+    max-width:480px;
+    margin-bottom:34px;
+  }
+  .btn-row{ display:flex; gap:16px; flex-wrap:wrap; }
+  .btn{
+    padding:14px 28px; font-weight:700; font-size:0.94rem;
+    border-radius:2px; display:inline-flex; align-items:center; gap:8px;
+  }
+  .btn-primary{ background:var(--maroon); color:var(--paper); }
+  .btn-primary:hover{ background:#5f2323; }
+  .btn-outline{
+    border:1.5px solid var(--ink); color:var(--ink);
+  }
+  .btn-outline:hover{ background:var(--ink); color:var(--paper); }
+
+  .hero-visual{
+    position:relative;
+    aspect-ratio: 4/5;
+    border-radius:4px;
+    overflow:hidden;
+    background: linear-gradient(150deg, #5a4632, #2b2119 70%);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow: 0 40px 60px -30px rgba(33,26,20,0.5);
+  }
+  .hero-visual .frame-badge{
+    position:absolute; bottom:22px; left:22px;
+    background: rgba(247,242,234,0.94);
+    padding:14px 18px;
+    border-radius:2px;
+    max-width:220px;
+  }
+  .frame-badge .num{ font-family:'Fraunces',serif; font-size:1.8rem; font-weight:700; color:var(--maroon); line-height:1;}
+  .frame-badge .lbl{ font-size:0.76rem; color:#5a4f44; margin-top:4px; }
+  .hero-visual svg{ width:78%; opacity:0.9; }
+
+  /* ===== Section shared ===== */
+  section{ padding:86px 0; }
+  .section-head{ max-width:620px; margin-bottom:52px; }
+  .section-head .eyebrow{ margin-bottom:14px; }
+  .section-head h2{ font-size:clamp(2rem, 3.4vw, 2.7rem); line-height:1.12; }
+  .section-head p{ color:#5a4f44; margin-top:16px; line-height:1.6; font-size:1.02rem;}
+
+  /* ===== Services ===== */
+  .services{ background:var(--cream); }
+  .service-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .service-card{
+    background:var(--cream);
+    padding:36px 28px;
+    transition: background .25s ease;
+  }
+  .service-card:hover{ background:var(--paper); }
+  .service-card .si{
+    font-family:'Fraunces',serif; font-size:0.85rem; color:var(--gold);
+    font-weight:700; margin-bottom:18px; letter-spacing:0.06em;
+  }
+  .service-card h3{ font-size:1.18rem; margin-bottom:10px; }
+  .service-card p{ font-size:0.9rem; color:#5a4f44; line-height:1.55; }
+
+  /* ===== Gallery ===== */
+  .gallery-grid{
+    display:grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: 130px;
+    gap:8px;
+  }
+  .gph{
+    border-radius:3px;
+    display:flex; align-items:center; justify-content:center;
+    position:relative; overflow:hidden;
+    background: linear-gradient(135deg, var(--sepia), #8a6f4d);
+    color:rgba(247,242,234,0.85);
+    font-family:'Fraunces',serif; font-style:italic; font-size:0.85rem;
+  }
+  .gph::after{
+    content:''; position:absolute; inset:0;
+    background: repeating-linear-gradient(115deg, rgba(0,0,0,0.06) 0 2px, transparent 2px 14px);
+  }
+  .gph.g1{ grid-column: span 2; grid-row: span 2; }
+  .gph.g2{ grid-column: span 2; }
+  .gph.g3{ grid-column: span 2; }
+  .gph.g4{ grid-column: span 2; }
+  .gph.g5{ grid-column: span 2; grid-row: span 2;}
+  .gph.g6{ grid-column: span 2; }
+
+  /* ===== About ===== */
+  .about{ background:var(--ink); color:var(--paper); }
+  .about .wrap{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:64px; align-items:center; }
+  .about .eyebrow{ color:var(--sepia); }
+  .about .eyebrow::before{ background:var(--sepia); }
+  .about h2{ font-size:clamp(1.9rem,3.2vw,2.5rem); line-height:1.16; margin-bottom:22px; color:var(--paper); }
+  .about p{ color:#cfc4b3; line-height:1.7; margin-bottom:16px; }
+  .stat-row{ display:flex; gap:40px; margin-top:34px; }
+  .stat .n{ font-family:'Fraunces',serif; font-size:2.2rem; font-weight:700; color:var(--sepia); }
+  .stat .l{ font-size:0.82rem; color:#a89a86; margin-top:4px; }
+  .about-photo{
+    aspect-ratio:1/1.1;
+    border-radius:4px;
+    background: linear-gradient(160deg,#3b2f22,#1a140e);
+    position:relative;
+    overflow:hidden;
+  }
+  .about-photo svg{ position:absolute; inset:0; margin:auto; width:60%; opacity:0.5;}
+
+  /* ===== Reviews ===== */
+  .reviews .section-head{ margin-bottom:40px; }
+  .review-row{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  .review-card{
+    background:var(--cream);
+    padding:30px 26px;
+    border-radius:3px;
+    border-left:3px solid var(--rust);
+  }
+  .review-card .stars{ color:var(--gold); font-size:0.95rem; margin-bottom:14px; letter-spacing:2px;}
+  .review-card p{ font-size:0.95rem; line-height:1.6; color:#453b32; margin-bottom:18px; }
+  .review-card .who{ font-weight:700; font-size:0.88rem; }
+
+  /* ===== Contact / CTA ===== */
+  .contact{ background:var(--maroon); color:var(--paper); }
+  .contact-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:60px;
+  }
+  .contact h2{ color:var(--paper); font-size:clamp(1.9rem,3.2vw,2.6rem); margin-bottom:18px; }
+  .contact > .wrap > p{ color:#e8d3c9; max-width:420px; line-height:1.6; margin-bottom:30px;}
+  .contact-item{ display:flex; gap:16px; margin-bottom:24px; align-items:flex-start; }
+  .contact-item .ic{
+    width:38px; height:38px; border-radius:50%;
+    border:1.5px solid rgba(247,242,234,0.4);
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0; font-size:1rem;
+  }
+  .contact-item .t{ font-weight:700; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.06em; color:#e8d3c9; margin-bottom:4px;}
+  .contact-item .d{ font-size:1rem; line-height:1.5; }
+  .map-embed{
+    border-radius:4px; overflow:hidden;
+    border:1px solid rgba(247,242,234,0.25);
+    aspect-ratio: 4/3.6;
+  }
+  .map-embed iframe{ width:100%; height:100%; border:0; filter: grayscale(0.15) contrast(1.05); }
+
+  /* form */
+  .form-box{
+    background: rgba(247,242,234,0.06);
+    border:1px solid rgba(247,242,234,0.2);
+    border-radius:4px;
+    padding:30px;
+    margin-top:32px;
+  }
+  .form-box h3{ font-family:'Fraunces',serif; font-size:1.3rem; margin-bottom:18px; color:var(--paper); }
+  .form-row{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px; }
+  .form-box input, .form-box textarea, .form-box select{
+    width:100%; padding:12px 14px;
+    background: rgba(247,242,234,0.94);
+    border:none; border-radius:2px;
+    font-family:'Manrope',sans-serif; font-size:0.92rem;
+    color:var(--ink);
+  }
+  .form-box textarea{ grid-column:1/-1; min-height:90px; resize:vertical; }
+  .form-box .full{ grid-column:1/-1; }
+  .form-submit{
+    background:var(--gold); color:var(--ink); border:none;
+    padding:13px 30px; font-weight:800; font-size:0.92rem;
+    border-radius:2px; cursor:pointer; width:100%;
+    letter-spacing:0.02em;
+  }
+  .form-submit:hover{ background:#c19a3d; }
+  .form-note{ font-size:0.8rem; color:#e0cfc4; margin-top:10px; text-align:center; }
+
+  /* ===== Footer ===== */
+  footer{ background:#181310; color:#9a8d7c; padding:38px 0; }
+  .foot-row{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px; font-size:0.85rem;}
+  .foot-row .logo{ color:var(--paper); font-size:1.1rem; }
+
+  /* ===== responsive ===== */
+  @media (max-width: 880px){
+    nav ul{ display:none; }
+    .menu-btn{ display:block; }
+    .nav-cta{ display:none; }
+    .hero-grid{ grid-template-columns:1fr; }
+    .hero-visual{ order:-1; aspect-ratio:16/11; }
+    .service-grid{ grid-template-columns:repeat(2,1fr); }
+    .about .wrap{ grid-template-columns:1fr; }
+    .about-photo{ order:-1; aspect-ratio:16/10; }
+    .stat-row{ gap:26px; }
+    .review-row{ grid-template-columns:1fr; }
+    .contact-grid{ grid-template-columns:1fr; gap:36px; }
+    .gallery-grid{ grid-template-columns:repeat(3,1fr); grid-auto-rows:110px; }
+    .gph.g1, .gph.g5{ grid-row:span 1; }
+    .form-row{ grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="filmstrip"></div>
+
+<header>
+  <div class="wrap nav">
+    <div class="logo"><span class="dot"></span>Neha Studio</div>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#" class="nav-cta" onclick="document.getElementById('contactCard').style.display='flex'; return false;">Contact Us</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Triveni Nagar, Lucknow</div>
+      <h1>Turning every moment into a <em>lasting</em> memory</h1>
+      <p>Neha Studio in Triveni Nagar captures your most special moments with a professional touch — from weddings to birthdays, every shoot done with heart.</p>
+      <div class="btn-row">
+        <a href="tel:+919415081446" class="btn btn-primary">📞 94150 81446</a>
+        <a href="https://wa.me/919415081446" class="btn btn-outline">Message on WhatsApp</a>
+      </div>
+    </div>
+      <div class="hero-visual" style="background-image:url('images/hero.jpg.jpeg'); background-size:cover; background-position:center;">
+      <div class="frame-badge">
+        <div class="num">10+</div>
+        <div class="lbl">years of photography experience in Lucknow</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="filmstrip"></div>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">What We Do</div>
+      <h2>Services for every occasion</h2>
+      <p>Whether it's a wedding or a small birthday function — Neha Studio brings the same care and craft to every shoot.</p>
+    </div>
+  </div>
+  <div class="wrap" style="padding:0;">
+    <div class="service-grid">
+      <div class="service-card">
+        <div class="si">01 — Wedding</div>
+        <h3>Wedding Shoot</h3>
+        <p>Full wedding-day coverage, blending candid moments with traditional shots.</p>
+      </div>
+      <div class="service-card">
+        <div class="si">02 — Pre-Wedding</div>
+        <h3>Pre-Wedding Shoot</h3>
+        <p>Capturing the couple's special early moments at beautiful locations.</p>
+      </div>
+      <div class="service-card">
+        <div class="si">03 — Occasions</div>
+        <h3>Birthday & Baby Shoot</h3>
+        <p>Children's birthdays and a newborn's first moments, covered with care.</p>
+      </div>
+      <div class="service-card">
+        <div class="si">04 — Finishing</div>
+        <h3>Album Printing & Editing</h3>
+        <p>High-quality album printing and professional photo editing services.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Our Work</div>
+      <h2>Gallery — a few glimpses</h2>
+      <p>Real photos from the studio's shoots will be added here soon. Placeholder frames are shown for now — click any tile to preview.</p>
+    </div>
+      <div class="gallery-grid">
+      <div class="gph g1" data-img="images/bridal.jpg" data-caption="Bridal Look" style="background-image:url('images/bridal.jpg'); background-size:cover; background-position:center 20%; color:transparent;"></div>
+      <div class="gph g2" data-img="images/wedding-couple.jpg.jpeg" data-caption="Pre-Wedding" style="background-image:url('images/wedding-couple.jpg.jpeg'); background-size:cover; background-position:center; color:transparent;"></div>
+      <div class="gph g3" data-img="images/wedding-stage.jpg.jpeg" data-caption="Wedding Stage" style="background-image:url('images/wedding-stage.jpg.jpeg'); background-size:cover; background-position:center; color:transparent;"></div>
+      <div class="gph g4" data-img="images/rings.jpg" data-caption="Rings" style="background-image:url('images/rings.jpg'); background-size:cover; background-position:center; color:transparent;"></div>
+      <div class="gph g5" data-img="images/pink-bride.jpg.jpeg" data-caption="Bride Portrait" style="background-image:url('images/pink-bride.jpg.jpeg'); background-size:cover; background-position:center 15%; color:transparent;"></div>
+      <div class="gph g6" data-img="images/drone.jpeg" data-caption="Our Equipment" style="background-image:url('images/drone.jpeg'); background-size:cover; background-position:center; color:transparent;"></div>
+    </div>
+  </div>
+</section>
+
+<div class="filmstrip"></div>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">About Neha Studio</div>
+      <h2>A trusted name for photography in Triveni Nagar</h2>
+      <p>Neha Studio has been capturing the special moments of Triveni Nagar and the surrounding community — weddings, birthdays, and family functions — for years.</p>
+      <p>Run by <strong>Lal Bahadur Rathore</strong>, the studio gives every client personal attention, so each photograph becomes more than just a picture — it becomes a memory.</p>
+      <div class="stat-row">
+        <div class="stat"><div class="n">10+</div><div class="l">Years of Experience</div></div>
+        <div class="stat"><div class="n">500+</div><div class="l">Happy Clients</div></div>
+        <div class="stat"><div class="n">4</div><div class="l">Core Services</div></div>
+      </div>
+    </div>
+    <div class="about-photo" style="background-image:url('images/studio.png'); background-size:cover; background-position:center;">
+    <div style="position:absolute; bottom:0; left:0; right:0; background:linear-gradient(to top, rgba(24,19,16,0.85), transparent); padding:20px 18px 14px; font-size:0.82rem; color:var(--sepia); font-weight:600;">Visit Neha Studio, Triveni Nagar, Lucknow</div>
+  </div>
+</section>
+
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">What Clients Say</div>
+      <h2>Reviews</h2>
+    </div>
+    <div class="review-row">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>Did a wonderful job at our wedding shoot. The photos came out completely natural and beautiful.</p>
+        <div class="who">— Client, Triveni Nagar</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>Arrived on time and worked with a lot of patience during our kid's birthday shoot.</p>
+        <div class="who">— Client, Lucknow</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>The album printing quality was excellent, and the price was very reasonable too.</p>
+        <div class="who">— Client, Aashiyana</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="eyebrow">Get In Touch</div>
+      <h2>Book your shoot</h2>
+      <p>Call us or send a WhatsApp message — we'll get back to you soon to confirm the date for your function.</p>
+
+      <div class="contact-item">
+        <div class="ic">📍</div>
+        <div><div class="t">Address</div><div class="d">New Neha Studio, Jai Hind Guest House,<br>Near Triveni Nagar, 2nd Sitapur Road,<br>Lucknow, Uttar Pradesh — 226020</div></div>
+      </div>
+      <div class="contact-item">
+        <div class="ic">📞</div>
+        <div><div class="t">Phone</div><div class="d">94150 81446<br>82994 88119</div></div>
+      </div>
+      <div class="contact-item">
+        <div class="ic">🕐</div>
+        <div><div class="t">Hours</div><div class="d">Open daily — 10:00 AM to 8:30 PM</div></div>
+      </div>
+
+      <div class="form-box">
+        <h3>Send an Enquiry</h3>
+        <form onsubmit="event.preventDefault(); window.location.href='https://wa.me/919415081446?text=' + encodeURIComponent('Hi, I would like to enquire about a photoshoot.\nName: ' + document.getElementById('nm').value + '\nService: ' + document.getElementById('sv').value + '\nMessage: ' + document.getElementById('ms').value);">
+          <div class="form-row">
+            <input id="nm" type="text" placeholder="Your name" required>
+            <select id="sv">
+              <option>Wedding Shoot</option>
+              <option>Pre-Wedding Shoot</option>
+              <option>Birthday/Baby Shoot</option>
+              <option>Album Printing</option>
+              <option>Something Else</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <textarea id="ms" class="full" placeholder="Tell us your date and requirement..."></textarea>
+          </div>
+          <button class="form-submit" type="submit">Send on WhatsApp →</button>
+        </form>
+        <div class="form-note">Or call us directly: 94150 81446 / 82994 88119</div>
+      </div>
+    </div>
+
+    <div class="map-embed">
+      <iframe src="https://www.google.com/maps?q=Jai+Hind+Guest+House,+Near+Triveni+Nagar,+2nd+Sitapur+Road,+Lucknow,+Uttar+Pradesh+226020&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<div class="filmstrip"></div>
+
+<footer>
+  <div class="wrap foot-row">
+    <div class="logo">Neha Studio</div>
+    <a href="https://www.instagram.com/neha_studio9415?igsh=Y2tsZ2JlY3ZxbzJ3" target="_blank" rel="noopener" id="igLink" style="display:flex; align-items:center; gap:8px; color:#e8d3c9; font-weight:600;">
+      📷 Follow us on Instagram
+    </a>
+    <div>© 2026 Neha Studio, Triveni Nagar, Lucknow. All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- Contact Card Popup -->
+<div id="contactCard" style="display:none; position:fixed; inset:0; background:rgba(20,15,10,0.85); z-index:250; align-items:center; justify-content:center; padding:20px;" onclick="if(event.target===this) this.style.display='none';">
+  <div style="background:var(--paper); border-radius:8px; padding:32px; max-width:360px; width:100%; text-align:center; position:relative;">
+    <button onclick="document.getElementById('contactCard').style.display='none';" style="position:absolute; top:12px; right:16px; background:none; border:none; font-size:1.4rem; cursor:pointer; color:var(--ink);">×</button>
+    <div style="font-family:'Fraunces',serif; font-size:1.4rem; font-weight:700; color:var(--maroon); margin-bottom:6px;">Neha Studio</div>
+    <div style="font-size:0.85rem; color:#5a4f44; margin-bottom:22px;">Triveni Nagar, Lucknow</div>
+
+    <a href="tel:+919415081446" style="display:block; background:var(--maroon); color:var(--paper); padding:13px; border-radius:4px; font-weight:700; margin-bottom:12px;">📞 Call: 94150 81446</a>
+    <a href="tel:+918299488119" style="display:block; background:var(--maroon); color:var(--paper); padding:13px; border-radius:4px; font-weight:700; margin-bottom:12px;">📞 Call: 82994 88119</a>
+    <a href="https://wa.me/919415081446" target="_blank" style="display:block; background:#25D366; color:#fff; padding:13px; border-radius:4px; font-weight:700; margin-bottom:18px;">💬 WhatsApp Message</a>
+
+    <div style="text-align:left; font-size:0.88rem; color:#453b32; line-height:1.6; border-top:1px solid var(--line); padding-top:16px;">
+      <strong>📍 Address:</strong><br>
+      New Neha Studio, Jai Hind Guest House,<br>
+      Near Triveni Nagar, 2nd Sitapur Road,<br>
+      Lucknow, Uttar Pradesh — 226020<br><br>
+      <strong>🕐 Hours:</strong> 10:00 AM – 8:30 PM (Daily)
+    </div>
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div id="lightbox" style="display:none; position:fixed; inset:0; background:rgba(20,15,10,0.92); z-index:200; align-items:center; justify-content:center; cursor:zoom-out; padding:20px;">
+  <img id="lightboxImg" src="" alt="" style="max-width:90vw; max-height:85vh; width:auto; height:auto; border-radius:6px; box-shadow:0 20px 60px rgba(0,0,0,0.5); object-fit:contain;">
+</div>
+
+<script>
+  // Mobile menu toggle
+  const menuBtn = document.getElementById('menuBtn');
+  const navUl = document.querySelector('nav ul');
+  if (menuBtn && navUl) {
+    menuBtn.addEventListener('click', () => {
+      const open = navUl.style.display === 'flex';
+      navUl.style.display = open ? 'none' : 'flex';
+      navUl.style.flexDirection = 'column';
+      navUl.style.position = 'absolute';
+      navUl.style.top = '100%';
+      navUl.style.left = '0';
+      navUl.style.right = '0';
+      navUl.style.background = 'var(--paper)';
+      navUl.style.padding = '20px 28px';
+      navUl.style.gap = '16px';
+      navUl.style.borderBottom = '1px solid var(--line)';
+    });
+  }
+
+  // Gallery lightbox
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  document.querySelectorAll('.gph').forEach(el => {
+    el.style.cursor = 'zoom-in';
+    el.addEventListener('click', () => {
+      lightboxImg.src = el.dataset.img || '';
+      lightboxImg.alt = el.dataset.caption || '';
+      lightbox.style.display = 'flex';
+    });
+  });
+  lightbox.addEventListener('click', () => { lightbox.style.display = 'none'; });
+</script>
+
+</body>
+</html>
